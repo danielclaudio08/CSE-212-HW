@@ -16,7 +16,7 @@
     }
 
     /**
-     * <summary>Determine if there are any duplicate letters in the text provided</summary>
+     * <summary>Determine ilf there are any duplicate letters in the text provided</summary>
      * <param name="text">Text to check for duplicate letters</param>
      * <returns>true if all letters are unique, otherwise false</returns>
      */
