@@ -9,7 +9,7 @@
 /// 'left', 'right', 'up', and 'down' are boolean are represent valid directions
 ///
 /// If a direction is false, then we can assume there is a wall in that direction.
-/// If a direction is true, then we can proceed.  
+/// If a direction is true, then we can proceed.
 ///
 /// If there is a wall, then throw an InvalidOperationException with the message "Can't go that way!".  If there is no wall,
 /// then the 'currX' and 'currY' values should be changed.
@@ -26,6 +26,8 @@ public class Maze
     }
 
     // TODO Problem 4 - ADD YOUR CODE HERE
+    private bool[] CurrentPos => _mazeMap[(_currX, _currY)];
+
     /// <summary>
     /// Check to see if you can move left.  If you can, then move.  If you
     /// can't move, throw an InvalidOperationException with the message "Can't go that way!".
@@ -33,6 +35,10 @@ public class Maze
     public void MoveLeft()
     {
         // FILL IN CODE
+        if (CurrentPos[0]) // Check if left is true
+            _currX--;
+        else
+            throw new InvalidOperationException("Can't go that way!");
     }
 
     /// <summary>
@@ -42,6 +48,10 @@ public class Maze
     public void MoveRight()
     {
         // FILL IN CODE
+        if (CurrentPos[1]) // Check if right is true
+            _currX++;
+        else
+            throw new InvalidOperationException("Can't go that way!");
     }
 
     /// <summary>
@@ -51,6 +61,10 @@ public class Maze
     public void MoveUp()
     {
         // FILL IN CODE
+        if (CurrentPos[2]) // Check if up is true
+            _currY--;
+        else
+            throw new InvalidOperationException("Can't go that way!");
     }
 
     /// <summary>
@@ -60,6 +74,10 @@ public class Maze
     public void MoveDown()
     {
         // FILL IN CODE
+        if (CurrentPos[3]) // Check if down is true
+            _currY++;
+        else
+            throw new InvalidOperationException("Can't go that way!");
     }
 
     public string GetStatus()
